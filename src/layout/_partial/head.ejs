@@ -1,0 +1,36 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%
+    var title = page.title;
+
+    if(is_archive()){
+      title = __('title.archives');
+    }
+    else if (is_category()){
+      title = __('title.categories') + ': ' + page.category;
+    }
+    else if (is_tag()){
+      title = __('title.tags') + ': ' + page.tag;
+    }
+  %>
+  <title><% if (title){ %><%= title %> <%= theme.title.symbol %> <% } %><%= config.title %></title>
+
+  <%- css('bootstrap/css/bootstrap.min') %>
+  <%- css('bootstrap/css/bootstrap-icons.min') %>
+  <%- css('css/style') %>
+
+  <% if (theme.logo.favicon){ %><%- favicon_tag(theme.logo.favicon) %><% } %>
+
+  <meta name="description" content="<%= config.description%>">
+  <meta name="keywords" content="<%= config.keywords%>">
+
+  <!-- Apple设备图标 -->
+  <link rel="apple-touch-icon" sizes="180x180" href="<%= theme.logo.apple_touch_icon %>">
+  <!-- Android设备图标 -->
+  <link rel="icon" type="image/png" sizes="192x192" href="<%= theme.logo.x192 %>">
+  <link rel="icon" type="image/png" sizes="512x512" href="<%= theme.logo.x512 %>">
+
+  <!-- Open Graph协议(社交媒体分享) -->
+  <%- open_graph() %>
+</head>

@@ -1,0 +1,54 @@
+title:
+  # 标题中间的连接符号
+  symbol: '|'
+
+# Header 导航
+# 显示: 导航地址
+menu:
+  主页: /
+  归档: /archives
+  分类: /categories
+  标签: /tags
+  关于我: /about
+
+logo:
+  # 原始 Logo 路径(Header/Footer展示用)
+  path: /images/logo.png
+  # Favicon 路径
+  favicon: /favicon.ico
+  # 苹果设备尺寸LOGO
+  apple_touch_icon: /images/logo.png
+  # 其它大小LOGO
+  x192: /images/logo.png
+  x512: /images/logo.png
+
+# Footer 版权说明
+copyright: '© 2025 <a href="https://fastchen.com">FASTCHEN</a> All Rights Reserved.'
+
+# 社交图标可自定义添加
+# 添加方法: 键(通常是平台名称): URL格式地址 || 图标完整Class
+# Bootstrap 图标查找地址：https://icons.getbootstrap.com/
+social:
+  GitHub: https://github.com/fastchen || bi bi-github
+  #E-Mail: mailto:yourname@gmail.com || bi bi-envelope-paper
+
+post:
+  # 文章显示 "发布于" 日期 默认值: true 可选值: true / false
+  show_posted_date: true
+  # 文章显示 "更新于" 日期 默认值: true 可选值: true / false
+  show_updated_date: true
+  # 文章显示 "分类" 列表 默认值: true 可选值: true / false
+  show_categories: true
+
+tags:
+  # 标签前缀的符号
+  prefix: '#'
+  # 标签后缀的符号
+  suffix: ''
+  # 在首页也显示帖子的标签 默认值：false 可选值: true / false
+  show_tags_index: false
+
+# 返回顶部
+back_to_top:
+  # 启用 默认值：true 可选值: true / false
+  enable: true

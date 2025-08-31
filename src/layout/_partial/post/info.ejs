@@ -1,0 +1,24 @@
+<%
+    const postedDate = __('post.posted') + ' ' +  date(post.date);
+    const updatedDate = __('post.updated') + ' ' +  date(post.updated);
+%>
+<div class="mb-4 text-muted author-info">
+    <% if(theme.post.show_posted_date){ %>
+        <span title="<%= date_xml(post.date) %>"><i class="bi bi-calendar2 me-2" title="<%= postedDate %>"></i><%= postedDate %></span>
+    <% } %>
+    <% if(theme.post.show_updated_date){ %>
+        <span class="ms-3" title="<%= date_xml(post.updated) %>"><i class="bi bi-calendar2-plus me-2" title="<%= updatedDate %>"></i><%= updatedDate %></span>
+    <% } %>
+    
+    <% if(theme.post.show_categories){ %>
+        <% if (post.categories && post.categories.length){ %>
+            <span class="ms-3">
+                <i class="bi bi-folder me-2"></i><%- list_categories(post.categories, {
+                    show_count: false,
+                    style: 'none',
+                    separator: '、'
+                    }) %>
+            </span>
+        <% } %>
+    <% } %>
+</div>

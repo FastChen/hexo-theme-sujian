@@ -1,0 +1,60 @@
+@import '_common/highlight';
+
+/* 确保所有文本内容都能正确换行 */
+body {
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* 设置非第一个文章模块间距 */
+.post:not(:first-of-type) {
+  padding-top: 4em;
+}
+
+/* checkbox 列表对齐 */
+ul li:has(input[type="checkbox"]) {
+  list-style: none;
+  margin-left: -1em;
+}
+
+/* 修正代码块边距 */
+figure.highlight .code pre {
+  padding: 10px;
+  width: 100%;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.back-to-top:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.category-list {
+  font-size: large;
+  list-style: none;
+}
+
+.category-list .category-list-count {
+    font-size: small;
+    color: #555;
+    font-weight: bold;
+    line-height: 1;
+    margin-left: 6px;
+    padding: 1px 4px;
+}

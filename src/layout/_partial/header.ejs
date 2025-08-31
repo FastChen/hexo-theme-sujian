@@ -1,0 +1,17 @@
+<header class="bg-body p-3 mb-3 border-bottom">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="<%- url_for() %>" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+          <img width="32" height="32" src="<%- url_for(theme.logo.path) %>" />
+        </a>
+        <ul class="nav nav-underline col-12 col-lg-auto me-lg-auto ms-3 mb-2 justify-content-center mb-md-0">
+          <%
+            for (var i in theme.menu){ 
+            const isActive = is_current(theme.menu[i])? 'active':'link-body-emphasis';
+          %>
+          <li><a href="<%- url_for(theme.menu[i]) %>" class="nav-link px-2 <%- isActive %>"><%= i %></a></li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+  </header>

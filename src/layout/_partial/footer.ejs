@@ -1,0 +1,40 @@
+<footer class="border-top bg-body">
+  <div class="container">
+    <% const fixClass = theme.social ? 'mt-3' : 'my-3' %>
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-3 <%- fixClass %>">
+      <div>
+        <a href="/" class="link-body-emphasis text-decoration-none">
+          <img width="32" height="32" src="<%- url_for(theme.logo.path) %>" />
+        </a>
+        <span class="ms-2">
+          <%- theme.copyright %> 由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://github.com/FastChen/hexo-theme-sujian" rel="noopener" target="_blank">SuJian</a> 强力驱动
+        </span>
+      </div>
+
+      <ul class="list-unstyled d-flex d-grid gap-3">
+          <% for (var i in theme.social){ %>
+            <% const link = theme.social[i] ? theme.social[i].split('||').map(item => item.trim()) : []; %>
+            <% const linkUrl = link[0] %>
+            <% const linkIcon = link[1] %>
+            <li>
+                <a class="link-body-emphasis" href="<%- url_for(linkUrl) %>">
+                <i class="<%- linkIcon %>" style="font-size: 24px;"></i>
+              </a>
+            </li>
+          <% } %>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+
+<%- js('bootstrap/js/bootstrap.min') %>
+
+<%- js('js/utils/tag-color') %>
+<script>
+// 页面加载后设置标签颜色
+document.addEventListener('DOMContentLoaded', function() {
+    TagColor.applyRandomColorsToAll('.tag-item');
+});
+</script>

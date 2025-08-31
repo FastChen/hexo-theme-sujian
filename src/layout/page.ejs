@@ -1,0 +1,27 @@
+<div class="page">
+    <div class="text-center">
+        <h1 class="page-title fw-semibold">
+            <%- page.title %>
+        </h1>
+    </div>
+
+    <% if (page.type === "tags"){ %>
+        <div class="text-center">
+            <h4 class="mb-4"><%= _p('tags.total_count', site.tags.length); %></h4>
+            <% if (site.tags.length){ %>
+                <% site.tags.each(function(tag){ %>
+                    <a href="<%= url_for(tag.path) %>"><span class="tag-item" data-tag="<%= tag.name %>"><%= theme.tags.prefix %><%= tag.name %><%= theme.tags.suffix %></span></a>
+                <% }) %>
+            <% } %>
+         </div>
+    <% } else if (page.type === "categories") { %>
+        <div class="text-center">
+            <h4 class="mb-4"><%= _p('categories.total_count', site.categories.length); %></h4>
+        </div>
+        <%- list_categories(site.categories) %>
+    <% } else { %>
+    <div class="mt-4">
+        <%-page.content%>
+    </div>
+    <% } %>
+</div>

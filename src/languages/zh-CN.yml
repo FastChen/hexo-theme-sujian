@@ -1,0 +1,19 @@
+name: 简体中文
+
+title:
+  archives: 归档
+  categories: 分类
+  tags: 标签
+
+post:
+  posted: 发布于
+  updated: 更新于
+  more: 阅读全文
+
+back_to_top: 返回顶部
+
+categories:
+  total_count: "目前共计 %d 个分类"
+
+tags:
+  total_count: "目前共计 %d 个标签"

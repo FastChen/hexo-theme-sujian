@@ -1,0 +1,27 @@
+<%# 分页功能 %>
+<% if (page.total > 1){ %>
+<nav class="mt-5">
+  <ul class="pagination">
+    <% if (page.prev) { %>
+    <li class="page-item">
+      <a class="page-link" href="<%= url_for(page.prev_link) %>" aria-label="Previous" rel="prev">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <% } %>
+
+    <% for (var i = 0; i < page.total; i++) { %>
+      <% const navactive = page.current == i + 1 ? ' active' : '' %>
+      <li class="page-item"><a class="page-link<%= navactive %>" href="<%= url_for(i == 0 ? baseURL : url_for(baseURL + '/' + config.pagination_dir + '/' + (i + 1))) %>"><%= i + 1 %></a></li>
+    <% } %>
+    
+    <% if (page.next) { %>
+    <li class="page-item">
+      <a class="page-link" href="<%= url_for(page.next_link) %>" aria-label="Next" rel="next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+    <% } %>
+  </ul>
+</nav>
+<% } %>

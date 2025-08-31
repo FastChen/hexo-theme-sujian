@@ -1,0 +1,22 @@
+<div class="post">
+    <%- partial('post/title') %>
+
+    <% if (index){ %>
+        <%- partial('post/info') %>
+    <% } else {%>
+        <div class="text-center">
+            <%- partial('post/info') %>
+        </div>
+    <% } %>
+
+    <% if (post.excerpt && index){ %>
+        <%- post.excerpt %>
+          <p>
+            <strong><a class="icon-link icon-link-hover" href="<%- url_for(post.path) %>#more"><%= __('post.more') %><i class="bi bi-arrow-right" style="height: auto;"></i></a></strong>
+          </p>
+      <% } else { %>
+        <%- post.content %>
+      <% } %>
+    
+    <%- partial('post/tags') %>
+</div>
