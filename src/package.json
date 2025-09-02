@@ -1,0 +1,21 @@
+{
+  "name": "hexo-theme-sujian",
+  "version": "1.0.0",
+  "description": "A simple hexo theme",
+  "keywords": [
+    "hexo",
+    "theme",
+    "sujian"
+  ],
+  "license": "MIT",
+  "author": "FastChen",
+  "main": "package.json",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FastChen/hexo-theme-sujian.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FastChen/hexo-theme-sujian/issues"
+  },
+  "homepage": "https://fastchen.com"
+}
