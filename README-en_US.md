@@ -60,3 +60,8 @@ npm install hexo-theme-sujian
 2. Copy theme config file `_config.yml` and rename to `_config.sujian.yml`
 3. Cut `_config.sujian.yml` to Hexo `_config.yml` same directory
 4. Configure `_config.sujian.yml` to customized theme
+
+## Thanks
+
+1. [Hexo](https://hexo.io/) | for blog framework
+2. [Bootstrap](https://getbootstrap.com/) | for theme style

@@ -60,3 +60,8 @@ npm install hexo-theme-sujian
 2. 复制主题内的 `_config.yml` 并重命名为 `_config.sujian.yml`
 3. 将 `_config.sujian.yml` 放置与 `_config.yml` 评级目录下
 4. 修改 `_config.sujian.yml` 里的内容实现对主题的客制化
+
+## 鸣谢
+
+1. [Hexo](https://hexo.io/) | 没有它就没有这款主题的用武之地
+2. [Bootstrap](https://getbootstrap.com/) | 主题的基础样式来源
