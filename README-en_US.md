@@ -1,62 +1,62 @@
 <div align="right">
   语言:
-  中文
-  <a title="English" href="README-en_US.md">English</a>
+  English
+  <a title="中文" href="README.md">中文</a>
 </div>
 
 <div align="center">
   <img src="/source/images/logo.png" alt="hexo-theme-sujian" height="160" width="160"/>
-  <h1>素笺</h1>
-  <h3>一款简单的 Hexo 博客主题</h3>
+  <h1>SuJian</h1>
+  <h3>A simple hexo theme</h3>
   <img src="https://img.shields.io/github/stars/fastchen/hexo-theme-sujian?label=Star&logo=github"/>
   <a href="https://github.com/FastChen/hexo-theme-sujian/issues"><img src="https://img.shields.io/github/issues/fastchen/hexo-theme-sujian?label=Issues"/></a>
 </div>
 
-## 预览
+## Live Preview
 
 <div align="center">
     <h3>❤️ <a title="FASTCHEN" href="https://fastchen.com">FASTCHEN</a> BLOG</h3>
 </div>
 
-## 使用
+## Use
 
-### 安装主题
+### Installation
 
-**使用 Git 克隆安装**
+**Use Git Clone**
 
 ```bash
 cd hexo
 git clone https://github.com/FastChen/hexo-theme-sujian themes/sujian
 ```
 
-或
+OR
 
-**使用 NPM 安装**
+**Use NPM**
 
 ```bash
 cd hexo
 npm install hexo-theme-sujian
 ```
 
-### 更新主题
+### Update
 
-**使用 Git 进行更新**
+**Use Git Pull**
 
 ```bash
 cd hexo/themes/sujian
 git pull
 ```
 
-**使用 NPM 进行更新**
+**Use NPM**
 
 ```bash
 cd hexo
 npm install hexo-theme-sujian
 ```
 
-## 配置主题
+## Configuration
 
-1. 将 `_config.yml` 中的 `theme:` 值设置为 `sujian` (如出现空白可尝试改用 `hexo-theme-sujian`)
-2. 复制主题内的 `_config.yml` 并重命名为 `_config.sujian.yml`
-3. 将 `_config.sujian.yml` 放置与 `_config.yml` 评级目录下
-4. 修改 `_config.sujian.yml` 里的内容实现对主题的客制化
+1. Set Hexo `_config.yml` Key `theme:` Value To `sujian`
+2. Copy theme config file `_config.yml` and rename to `_config.sujian.yml`
+3. Cut `_config.sujian.yml` to Hexo `_config.yml` same directory
+4. Configure `_config.sujian.yml` to customized theme
