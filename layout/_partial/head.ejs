@@ -16,6 +16,8 @@
   %>
   <title><% if (title){ %><%= title %> <%= theme.title.symbol %> <% } %><%= config.title %></title>
 
+
+
   <%- css('bootstrap/css/bootstrap.min') %>
   <%- css('bootstrap/css/bootstrap-icons.min') %>
   <%- css('css/style') %>
@@ -34,3 +36,22 @@
   <!-- Open Graph协议(社交媒体分享) -->
   <%- open_graph() %>
 </head>
+
+<!-- 内联脚本立即设置主题，防止闪烁 -->
+<script>
+  // 立即从localStorage获取主题设置或使用系统偏好
+  const savedTheme = localStorage.getItem('theme') || 'auto';
+  let theme = 'light';
+  
+  if (savedTheme === 'dark') {
+      theme = 'dark';
+  } else if (savedTheme === 'auto') {
+      // 检测系统偏好
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+      }
+  }
+  
+  // 立即设置主题
+  document.documentElement.setAttribute('data-bs-theme', theme);
+</script>
