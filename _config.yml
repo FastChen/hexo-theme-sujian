@@ -14,6 +14,8 @@ menu:
 logo:
   # 原始 Logo 路径(Header/Footer展示用)
   path: /images/logo.png
+  # 深色模式下的 Logo
+  path_dark: /images/logo_white.png
   # Favicon 路径
   favicon: /favicon.ico
   # 苹果设备尺寸LOGO

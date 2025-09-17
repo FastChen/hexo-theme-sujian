@@ -7,9 +7,24 @@ body {
   overflow-wrap: break-word;
 }
 
-/* 平滑过渡效果 */
+/* 主题切换颜色时平滑过渡 */
 .theme-transition {
    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* 主题切换LOGO显示 */
+.logo-light {
+    display: unset;
+}
+.logo-dark {
+    display: none;
+}
+
+[data-bs-theme="dark"] .logo-light {
+    display: none;
+}
+[data-bs-theme="dark"] .logo-dark {
+    display: unset;
 }
 
 /* 设置非第一个文章模块间距 */
@@ -23,10 +38,22 @@ ul li:has(input[type="checkbox"]) {
   margin-left: -1em;
 }
 
+/* 代码块增加边框背景色 */
+figure.highlight {
+  background-color: var(--bs-body-bg);
+  border-radius: calc(var(--bs-border-radius));
+  border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+}
+
 /* 修正代码块边距 */
 figure.highlight .code pre {
   padding: 10px;
   width: 100%;
+}
+
+/* 单行代码块增加边框 */
+code {
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
 }
 
 .back-to-top {
