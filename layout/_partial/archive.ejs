@@ -1,21 +1,44 @@
-<% var last; %>
-<% page.posts.each(function(post, i){ %>
-    <% const year = post.date.year(); %>
+<%
+// 检测当前页面是否为年份归档页
+var isYearArchive = page.year !== undefined;
+var archiveYear = isYearArchive ? page.year : null;
+var baseURLForPagination = isYearArchive ? config.archive_dir + '/' + archiveYear : config.archive_dir;
+%>
 
-    <% if (last != year){ %>
-    <% last = year; %>
-        <h2>
-            <a href="<%- url_for(config.archive_dir + '/' + year) %>" class="archive-year"><%= year %></a>
-        </h2>
+<% var lastYear = null; %>
+
+<%- partial('_partial/page-title', { title: _p('title.archives'), subtitle: _p('archives.total_count', site.posts.length) }) %>
+
+<% page.posts.each(function(post, i){ %>
+    <% const postYear = post.date.year(); %>
+
+    <% if (lastYear !== postYear) { %>
+        <% if (lastYear !== null) { // 关闭上一个年份的标签 %>
+                </ul>
+            </div>
+        <% } %>
+        <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <h3 class="border-bottom pb-2 mb-0">
+            <% if (isYearArchive && archiveYear === postYear) { %>
+                <%= postYear %>
+            <% } else { %>
+                <a href="<%- url_for(config.archive_dir + '/' + postYear) %>" class="link-offset-1 link-underline link-underline-opacity-25"><%= postYear %></a>
+            <% } %>
+        </h3>
+        <ul class="list-group list-group-flush">
+        <% lastYear = postYear; %>
     <% } %>
 
-    <ul class="list-group list-group-flush">
-        <!-- <li class="list-group-item"><a class="" href="<%- url_for(post.link) %>" target="_blank"><%= post.title %></a></li> -->
-        <li class="list-group-item">
-      <a href="<%- url_for(post.path) %>"><%= post.title %></a>
-      <span title="<%= date_xml(post.date) %>"><%= date(post.date) %></span>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-50-hover" href="<%- url_for(post.path) %>"><%= post.title %></a>
+        <span title="<%= date_xml(post.date) %>"><%= date(post.date) %></span>
     </li>
-    </ul>
+
 <% }) %>
 
-<%- partial('_partial/pagination', {baseURL: config.archive_dir}) %>
+<% if (lastYear !== null) { // 如果至少有一篇文章（即 lastYear 不为 null），则需要闭合最后一个未关闭的标签 %>
+        </ul>
+    </div>
+<% } %>
+
+<%- partial('_partial/pagination', { baseURL: baseURLForPagination }) %>

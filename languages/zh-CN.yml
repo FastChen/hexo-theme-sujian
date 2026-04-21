@@ -17,6 +17,9 @@ post:
 
 back_to_top: 返回顶部
 
+archives:
+  total_count: "目前共计 %d 篇文章"
+
 categories:
   total_count: "目前共计 %d 个分类"
 

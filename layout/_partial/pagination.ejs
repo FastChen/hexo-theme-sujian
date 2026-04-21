@@ -1,5 +1,6 @@
 <%# 分页功能 %>
-<% if (page.total > 1){ %>
+<% if (!page.total || page.total <= 1) return; %>
+
 <nav class="mt-5">
   <ul class="pagination">
     <% if (page.prev) { %>
@@ -10,9 +11,15 @@
     </li>
     <% } %>
 
-    <% for (var i = 0; i < page.total; i++) { %>
-      <% const navactive = page.current == i + 1 ? ' active' : '' %>
-      <li class="page-item"><a class="page-link<%= navactive %>" href="<%= url_for(i == 0 ? baseURL : url_for(baseURL + '/' + config.pagination_dir + '/' + (i + 1))) %>"><%= i + 1 %></a></li>
+    <% for (var i = 1; i <= page.total; i++) { %>
+      <% const navactive = page.current == i ? ' active' : '' %>
+      <li class="page-item<%= navactive %>">
+        <% if (i === 1) { %>
+          <a class="page-link" href="<%= url_for(baseURL + '/') %>"><%= i %></a>
+        <% } else { %>
+          <a class="page-link" href="<%= url_for(baseURL + '/' + config.pagination_dir + '/' + i) %>"><%= i %></a>
+        <% } %>
+      </li>
     <% } %>
     
     <% if (page.next) { %>
@@ -24,4 +31,3 @@
     <% } %>
   </ul>
 </nav>
-<% } %>
