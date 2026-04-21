@@ -7,7 +7,7 @@ var baseURLForPagination = isYearArchive ? config.archive_dir + '/' + archiveYea
 
 <% var lastYear = null; %>
 
-<%- partial('_partial/page-title', { title: _p('title.archives'), subtitle: _p('archives.total_count', site.posts.length) }) %>
+<%- partial('_partial/page/title', { title: _p('title.archives'), subtitle: _p('archives.total_count', site.posts.length) }) %>
 
 <% page.posts.each(function(post, i){ %>
     <% const postYear = post.date.year(); %>
@@ -31,7 +31,7 @@ var baseURLForPagination = isYearArchive ? config.archive_dir + '/' + archiveYea
 
     <li class="list-group-item d-flex justify-content-between align-items-center">
         <a class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-50-hover" href="<%- url_for(post.path) %>"><%= post.title %></a>
-        <span title="<%= date_xml(post.date) %>"><%= date(post.date) %></span>
+        <time datetime="<%= date_xml(post.date) %>" title="<%= date_xml(post.date) %>"><%= date(post.date) %></time>
     </li>
 
 <% }) %>

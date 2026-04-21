@@ -1,25 +1,5 @@
 <div class="page">
-    <% if (page.type === "tags"){ %>
-        <%- partial('_partial/page-title', { title: page.title, subtitle: _p('tags.total_count', site.tags.length) }) %>
-        
-        <div class="text-center">
-            <% if (site.tags.length){ %>
-                <% site.tags.each(function(tag){ %>
-                    <a href="<%= url_for(tag.path) %>"><span class="tag-item" data-tag="<%= tag.name %>"><%= theme.tags.prefix %><%= tag.name %><%= theme.tags.suffix %></span></a>
-                <% }) %>
-            <% } %>
-        </div>
-
-    <% } else if (page.type === "categories") { %>
-
-        <%- partial('_partial/page-title', { title: page.title, subtitle: _p('categories.total_count', site.categories.length) }) %>
-        <%- list_categories(site.categories) %>
-    
-    <% } else { %>
-
-        <div class="mt-4">
-            <%-page.content%>
-        </div>
-    
-    <% } %>
+    <div class="mt-4">
+        <%-page.content%>
+    </div>
 </div>

@@ -1,1 +1,17 @@
-<%- // TODO 目前由 page.ejs 接管 %>
+<%- partial('_partial/page/title', { title: _p('title.tags') + ': ' + page.tag, subtitle: _p('archives.total_count', page.posts.length) }) %>
+
+<div class="my-3 p-3 bg-body rounded shadow-sm">
+    <div class="tag-posts-list">
+    <ul class="list-group list-group-flush">
+        <!-- page.posts 包含了属于当前标签的所有文章列表 -->
+        <% page.posts.each(function(post) { %>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-50-hover" href="<%- url_for(post.path) %>"><%= post.title %></a>
+            <time datetime="<%= date_xml(post.date) %>" title="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time>
+        </li>
+        <% }) %>
+    </ul>
+    </div>
+</div>
+
+<%- partial('_partial/pagination', { baseURL: config.tag_dir }) %>

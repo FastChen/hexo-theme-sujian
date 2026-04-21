@@ -61,6 +61,35 @@ npm install hexo-theme-sujian
 3. 将 `_config.sujian.yml` 放置与 `_config.yml` 评级目录下
 4. 修改 `_config.sujian.yml` 里的内容实现对主题的客制化
 
+## 创建对应页面
+
+可以通过命令或手动创建对应的页面，然后将格式写入对应的 `index.md` 文件中
+
+**通过命令创建页面：**
+
+```bash
+# 创建文章分类页面
+hexo new page categories
+# 创建标签页面
+hexo new page tags
+```
+
+**通过手动新建页面：**
+
+1. 进入你的Hexo目录下的 `source` 文件夹
+2. 新建文件夹 `categories` 与 `tags` 文件夹
+3. 分别在上方创建的文件夹中新建 `index.md` 文件
+
+**按照下方格式写入对应的格式：**
+
+```markdown
+---
+title: 页面的名称例如：文章分类
+type: categories 页面的类型：`categories` 或 `tags`
+layout: categories 页面使用的模板：`categories` 或 `tags`
+---
+```
+
 ## 鸣谢
 
 1. [Hexo](https://hexo.io/) | 没有它就没有这款主题的用武之地

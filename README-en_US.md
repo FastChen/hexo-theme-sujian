@@ -61,6 +61,35 @@ npm install hexo-theme-sujian
 3. Cut `_config.sujian.yml` to Hexo `_config.yml` same directory
 4. Configure `_config.sujian.yml` to customized theme
 
+## Create corresponding pages
+
+You can create corresponding pages via commands or manually, and then write the format into the corresponding `index.md` file.
+
+**Create pages via commands:**
+
+```bash
+# Create article category page
+hexo new page categories
+# Create tag page
+hexo new page tags
+```
+
+**Create pages manually:**
+
+1. Enter the `source` folder in your Hexo directory.
+2. Create new folders `categories` and `tags`.
+3. Create a new `index.md` file in each of the folders created above.
+
+**Write the corresponding format as follows:**
+
+```markdown
+---
+title: Page name, e.g., Article Categories
+type: categories Page type: `categories` or `tags`
+layout: categories Template used by the page: `categories` or `tags`
+---
+```
+
 ## Thanks
 
 1. [Hexo](https://hexo.io/) | for blog framework
