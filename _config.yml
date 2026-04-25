@@ -10,6 +10,7 @@ menu:
   分类: /categories
   标签: /tags
   关于我: /about
+  友链: /friends
 
 logo:
   # 原始 Logo 路径(Header/Footer展示用)
@@ -54,3 +55,17 @@ tags:
 back_to_top:
   # 启用 默认值：true 可选值: true / false
   enable: true
+
+# 友链列表
+friends:
+  - name: FastChen
+    link: https://fastchen.com
+    avatar: https://fastchen.com/images/logo_2022_256.png
+    description: "以平常之心，做非凡之事。"
+  - name: Example
+    link: https://github.com/fastchen
+    avatar: /images/logo.png
+    description: "Example blog description."
+  - name: NoAvatarExample
+    link: https://example.com
+    description: "Example blog description."

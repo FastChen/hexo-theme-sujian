@@ -1,0 +1,21 @@
+<%
+    const friendCount = theme.friends ? theme.friends.length : 0;
+%>
+
+<%- partial('_partial/page/title', { title: page.title, subtitle: _p('friends.total_count', friendCount) }) %>
+
+<% if (theme.friends && friendCount) { %>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+        <!-- 响应式卡片网格 -->
+        <% theme.friends.forEach(function(friend){ %>
+            <%- partial('_partial/friend-card', { friend: friend }) %>
+        <% }) %>
+    </div>
+
+<% } else { %>
+
+<div class="text-muted d-flex justify-content-center gap-2">
+    <i class="bi bi-info-square-fill"></i>
+    <span>暂无友链，欢迎交换～</span>
+</div>
+<% } %>

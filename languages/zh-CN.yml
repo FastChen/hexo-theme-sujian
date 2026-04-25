@@ -25,3 +25,6 @@ categories:
 
 tags:
   total_count: "目前共计 %d 个标签"
+
+friends:
+  total_count: "目前共计 %d 个友链"

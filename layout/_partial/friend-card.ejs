@@ -1,0 +1,19 @@
+<a href="<%= friend.link %>" class="link-body-emphasis text-decoration-none" target="_blank" rel="noopener noreferrer">
+    <div class="bg-body rounded shadow-sm p-3">
+        <div class="d-flex gap-3 align-items-center">
+            <% if (friend.avatar && friend.avatar.trim() !=='' ) { %>
+                <!-- 头像 -->
+                <img height="48" width="48" src="<%= friend.avatar %>" alt="<%= friend.name %>" loading="lazy">
+            <% } %>
+            <!-- 文字 -->
+            <div class="flex-grow-1">
+                <h5 class="card-title mb-1">
+                    <%= friend.name %>
+                </h5>
+                <p class="card-text text-muted small mb-0">
+                    <%= friend.description %>
+                </p>
+            </div>
+        </div>
+    </div>
+</a>
