@@ -2,11 +2,9 @@
     <%- partial('post/title') %>
 
     <% if (index){ %>
-        <%- partial('post/info') %>
+        <%- partial('post/info', {align: 'start'}) %>
     <% } else {%>
-        <div class="text-center">
-            <%- partial('post/info') %>
-        </div>
+        <%- partial('post/info', {align: 'center'}) %>
     <% } %>
 
     <% if (post.excerpt && index){ %>

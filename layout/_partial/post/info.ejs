@@ -1,23 +1,42 @@
 <%
+    // 从外部传入 align 参数，默认为 start
+    const alignmentMap = {
+        'start': 'justify-content-start',
+        'center': 'justify-content-center', 
+        'end': 'justify-content-end',
+        'between': 'justify-content-between',
+        'around': 'justify-content-around'
+    };
+    const alignmentClass = alignmentMap[align] || 'justify-content-start';
+
     const postedDate = __('post.posted') + ' ' +  date(post.date);
     const updatedDate = __('post.updated') + ' ' +  date(post.updated);
 %>
-<div class="mb-4 text-muted author-info">
+
+<div class="text-muted author-info d-flex flex-wrap flex-row column-gap-3 mb-3 <%= alignmentClass %>">
     <% if(theme.post.show_posted_date){ %>
-        <span title="<%= date_xml(post.date) %>"><i class="bi bi-calendar2 me-2" title="<%= postedDate %>"></i><%= postedDate %></span>
+        <!-- 发布日期 -->
+        <span title="<%= date_xml(post.date) %>">
+            <i class="bi bi-calendar2 me-2" title="<%= postedDate %>"></i><%= postedDate %>
+        </span>
     <% } %>
     <% if(theme.post.show_updated_date){ %>
-        <span class="ms-3" title="<%= date_xml(post.updated) %>"><i class="bi bi-calendar2-plus me-2" title="<%= updatedDate %>"></i><%= updatedDate %></span>
+        <!-- 更新日期 -->
+        <span title="<%= date_xml(post.updated) %>">
+            <i class="bi bi-calendar2-plus me-2" title="<%= updatedDate %>"></i><%= updatedDate %>
+        </span>
     <% } %>
     
     <% if(theme.post.show_categories){ %>
         <% if (post.categories && post.categories.length){ %>
-            <span class="ms-3">
+            <!-- 分类 -->
+            <span>
                 <i class="bi bi-folder me-2"></i><%- list_categories(post.categories, {
-                    show_count: false,
-                    style: 'none',
-                    separator: '、'
-                    }) %>
+                        show_count: false,
+                        style: 'none',
+                        separator: '、'
+                    })
+                %>
             </span>
         <% } %>
     <% } %>

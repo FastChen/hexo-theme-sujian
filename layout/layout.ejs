@@ -1,13 +1,13 @@
 <!doctype html>
-<html>
+<html class="h-100">
   <%- partial('_partial/head') %>
 
-  <body class="theme-transition bg-body-tertiary">
+  <body class="d-flex flex-column h-100 theme-transition bg-body-tertiary">
     <%- partial('_partial/header') %>
     
-    <div class="container my-5">
+    <main class="flex-shrink-0 container my-3">
       <%- body %>
-    </div>
+    </main>
 
     <%- partial('_wiget/back-to-top') %>
     <%- partial('_partial/footer') %>
