@@ -1,5 +1,5 @@
 hexo.extend.filter.register('after_post_render', function(data) {
-  // 为所有 <blockquote> 标签添加 class="my_blockquote"
+  // 为所有 <blockquote> 标签添加 class
   data.content = data.content.replace(
     /<blockquote(.*?)>/g,
     function(match, attrs) {
