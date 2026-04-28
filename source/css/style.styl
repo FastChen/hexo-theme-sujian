@@ -9,22 +9,24 @@ body {
 
 /* 主题切换颜色时平滑过渡 */
 .theme-transition {
-   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
 }
 
 /* 主题切换LOGO显示 */
 .logo-light {
-    display: unset;
+  display: unset;
 }
+
 .logo-dark {
-    display: none;
+  display: none;
 }
 
 [data-bs-theme="dark"] .logo-light {
-    display: none;
+  display: none;
 }
+
 [data-bs-theme="dark"] .logo-dark {
-    display: unset;
+  display: unset;
 }
 
 /* 引用块样式 */
@@ -37,31 +39,6 @@ body {
 ul li:has(input[type="checkbox"]) {
   list-style: none;
   margin-left: -1em;
-}
-
-/* 代码块标题样式 */
-figure figcaption {
-  padding: 3px 6px;
-  background-color: var(--bs-tertiary-bg);
-  border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
-}
-
-/* 代码块增加边框背景色 */
-figure.highlight {
-  background-color: var(--bs-body-bg);
-  border-radius: calc(var(--bs-border-radius));
-  border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
-}
-
-/* 修正代码块边距 */
-figure.highlight .code pre {
-  padding: 10px;
-  width: 100%;
-}
-
-/* 单行代码块增加边框 */
-code {
-    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
 }
 
 .back-to-top {
@@ -91,10 +68,10 @@ code {
 }
 
 .category-list .category-list-count {
-    font-size: small;
-    color: #555;
-    font-weight: bold;
-    line-height: 1;
-    margin-left: 6px;
-    padding: 1px 4px;
+  font-size: small;
+  color: #555;
+  font-weight: bold;
+  line-height: 1;
+  margin-left: 6px;
+  padding: 1px 4px;
 }

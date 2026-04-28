@@ -5,12 +5,12 @@ title:
 # Header 导航
 # 显示: 导航地址
 menu:
-  主页: /
-  归档: /archives
-  分类: /categories
-  标签: /tags
-  关于我: /about
-  友链: /friends
+#  主页: /
+#  归档: /archives
+#  分类: /categories
+#  标签: /tags
+#  关于我: /about
+#  友链: /friends
 
 logo:
   # 原始 Logo 路径(Header/Footer展示用)
@@ -58,14 +58,14 @@ back_to_top:
 
 # 友链列表
 friends:
-  - name: FastChen
-    link: https://fastchen.com
-    avatar: https://fastchen.com/images/logo_2022_256.png
-    description: "以平常之心，做非凡之事。"
-  - name: Example
-    link: https://github.com/fastchen
-    avatar: /images/logo.png
-    description: "Example blog description."
-  - name: NoAvatarExample
-    link: https://example.com
-    description: "Example blog description."
+#  - name: FastChen
+#    link: https://fastchen.com
+#    avatar: https://fastchen.com/images/logo_2022_256.png
+#    description: "以平常之心，做非凡之事。"
+#  - name: Example
+#    link: https://github.com/fastchen
+#    avatar: /images/logo.png
+#    description: "Example blog description."
+#  - name: NoAvatarExample
+#    link: https://example.com
+#    description: "Example blog description."

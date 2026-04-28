@@ -1,55 +1,61 @@
-/*
+/* 引入高亮配色 */
+@import 'highlight-color-atom';
 
-Atom One Light by Daniel Gamage
-Original One Light Syntax theme from https://github.com/atom/one-light-syntax
-
-base:    #fafafa
-mono-1:  #383a42
-mono-2:  #686b77
-mono-3:  #a0a1a7
-hue-1:   #0184bb
-hue-2:   #4078f2
-hue-3:   #a626a4
-hue-4:   #50a14f
-hue-5:   #e45649
-hue-5-2: #c91243
-hue-6:   #986801
-hue-6-2: #c18401
-
-*/
-
-pre,
-code {
-  font-family: consolas, Menlo, monospace, 'PingFang SC', 'Microsoft YaHei';
+/* 代码块标题样式 */
+figure figcaption {
+  padding: 3px 6px;
+  background-color: var(--bs-tertiary-bg);
+  border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
 }
+
+/* 代码块增加边框背景色 */
+figure.highlight {
+  background-color: var(--bs-body-bg);
+  border-radius: calc(var(--bs-border-radius));
+  border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+}
+
+/* 修正代码块边距 */
+figure.highlight .code pre {
+  padding: 10px;
+  width: 100%;
+}
+
+/* 单行代码块增加边框 */
+code {
+  border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+}
+
 code {
   border-radius: 3px;
   font-size: 0.875em;
   padding: 2px 4px;
   overflow-wrap: break-word;
 }
+
 figure.highlight {
   overflow: auto;
   position: relative;
 }
+
 figure.highlight pre {
   border: 0;
   margin: 0;
   padding: 10px 0;
 }
+
 figure.highlight table {
   border: 0;
   margin: 0;
   width: auto;
 }
+
 figure.highlight td {
   border: 0;
   padding: 0;
 }
-figure.highlight .gutter {
-  -webkit-user-select: none;
-  user-select: none;
-}
+
+/* 行号列表 */
 figure.highlight .gutter pre {
   background: var(--highlight-gutter-background);
   color: var(--highlight-gutter-foreground);
@@ -58,83 +64,36 @@ figure.highlight .gutter pre {
   text-align: right;
   border-right: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
 }
-figure.highlight .marked {
-  background: rgba(0,0,0,0.3);
+
+/* 禁用行号选择 */
+figure.highlight .gutter {
+  -webkit-user-select: none;
+  user-select: none;
 }
+
 pre .caption {
   margin-bottom: 10px;
 }
+
 .gist table {
   width: auto;
 }
+
 .gist table td {
   border: 0;
 }
+
 pre {
   overflow: auto;
   padding: 10px;
 }
+
 pre code {
   background: none;
   padding: 0;
   text-shadow: none;
 }
-.comment,
-.quote {
-  color: #a0a1a7;
-  font-style: italic;
-}
-.doctag,
-.keyword,
-.formula {
-  color: #a626a4;
-}
-.section,
-.name,
-.selector-tag,
-.deletion,
-.subst {
-  color: #e45649;
-}
-.literal {
-  color: #0184bb;
-}
-.string,
-.regexp,
-.addition,
-.attribute,
-.meta .string {
-  color: #50a14f;
-}
-.attr,
-.variable,
-.template-variable,
-.type,
-.selector-class,
-.selector-attr,
-.selector-pseudo,
-.number {
-  color: #986801;
-}
-.symbol,
-.bullet,
-.link,
-.meta,
-.selector-id,
-.title {
-  color: #4078f2;
-}
-.built_in,
-.title.class_,
-.class .title {
-  color: #c18401;
-}
-.emphasis {
-  font-style: italic;
-}
-.strong {
-  font-weight: bold;
-}
-.link {
-  text-decoration: underline;
+
+figure.highlight .marked {
+  background: rgba(0, 0, 0, 0.3);
 }
