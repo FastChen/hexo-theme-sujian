@@ -22,9 +22,7 @@
   <%- css('bootstrap/css/bootstrap-icons.min') %>
   <%- css('css/style') %>
 
-  <% if (theme.logo.favicon){ %>
-    <%- favicon_tag(theme.logo.favicon) %>
-  <% } %>
+  <% if (theme.logo.favicon){ %><%- favicon_tag(theme.logo.favicon) %><% } %>
 
   <meta name="description" content="<%= config.description%>">
   <meta name="keywords" content="<%= config.keywords%>">
@@ -37,12 +35,6 @@
 
   <!-- Open Graph协议(社交媒体分享) -->
   <%- open_graph() %>
-
-  <% if (theme.useNotoSansFont === true){ %>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
-  <% } %>
 </head>
 
 <!-- 内联脚本立即设置主题，防止闪烁 -->

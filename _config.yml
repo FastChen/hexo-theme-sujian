@@ -51,10 +51,6 @@ tags:
   # 在首页也显示帖子的标签 默认值：false 可选值: true / false
   show_tags_index: false
 
-# 字体 启用 NotoSans 默认值：false 可选值: true / false
-# (注意：是使用 Google Fonts 引入的 NotoSans 字体)
-useNotoSansFont: false
-
 # 返回顶部
 back_to_top:
   # 启用 默认值：true 可选值: true / false
