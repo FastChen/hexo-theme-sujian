@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let text = '主题设置';
         if (theme === 'light') text = '<i class="me-1 bi bi-sun-fill"></i>';
         if (theme === 'dark') text = '<i class="me-1 bi bi-moon-stars-fill"></i>';
-        if (theme === 'auto') text = '<i class="me-1 bi bi-circle-half"></i>';
+        if (theme === 'auto') text = '<i class="me-1 bi bi-brilliance"></i>';
 
         themeDropdown.innerHTML = text;
     }
