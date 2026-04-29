@@ -56,6 +56,10 @@ back_to_top:
   # 启用 默认值：true 可选值: true / false
   enable: true
 
+# 字体 启用 NotoSans 默认值：false 可选值: true / false
+# (注意：是使用 Google Fonts 引入的 NotoSans 字体)
+useNotoSansFont: false
+
 # 友链列表
 friends:
 #  - name: FastChen

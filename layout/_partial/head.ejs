@@ -16,13 +16,13 @@
   %>
   <title><% if (title){ %><%= title %> <%= theme.title.symbol %> <% } %><%= config.title %></title>
 
-
-
   <%- css('bootstrap/css/bootstrap.min') %>
   <%- css('bootstrap/css/bootstrap-icons.min') %>
   <%- css('css/style') %>
 
-  <% if (theme.logo.favicon){ %><%- favicon_tag(theme.logo.favicon) %><% } %>
+  <% if (theme.logo.favicon){ %>
+    <%- favicon_tag(theme.logo.favicon) %>
+  <% } %>
 
   <meta name="description" content="<%= config.description%>">
   <meta name="keywords" content="<%= config.keywords%>">
@@ -32,6 +32,13 @@
   <!-- Android设备图标 -->
   <link rel="icon" type="image/png" sizes="192x192" href="<%= theme.logo.x192 %>">
   <link rel="icon" type="image/png" sizes="512x512" href="<%= theme.logo.x512 %>">
+
+  <% if (theme.useNotoSansFont === true){ %>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+  <% } %>
 
   <!-- Open Graph协议(社交媒体分享) -->
   <%- open_graph() %>

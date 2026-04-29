@@ -1,3 +1,14 @@
+v1.1.5 (2026-04-29)
+
+[更新]
+- 可通过配置 `useNotoSansFont: true/false` 引入 `NotoSans` 字体(通过 Google Fonts CDN)
+  - 如要自定义字体加载顺序可修改：`source\css\style.styl` 文件的 `:root` 内的 `--su-font-family` 变量
+
+[优化]
+- 主题选择拉框图标
+
+---
+
 v1.1.4 (2026-04-28)
 
 [优化]
