@@ -1,7 +1,7 @@
 hexo.extend.filter.register('after_post_render', function (data) {
     // 正则匹配所有 "文章" 的 img 标签，并添加class
     const regex = /<img([^>]*)>/g;
-    const replacement = '<img class="img-fluid"$1>';
+    const replacement = '<img class="img-fluid" data-fancybox="gallery" style="cursor: pointer;"$1>';
 
     // 针对文章生效
     data.content = data.content.replace(regex, replacement);
