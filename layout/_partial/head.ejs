@@ -20,10 +20,9 @@
   <%- css('bootstrap/css/bootstrap-icons.min') %>
   <%- css('css/style') %>
 
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css"
-/>
+  <% if (theme.fancybox.enable === true){ %>
+    <%- css('fancybox/fancybox') %>
+  <% } %>
 
   <% if (theme.logo.favicon){ %>
     <%- favicon_tag(theme.logo.favicon) %>

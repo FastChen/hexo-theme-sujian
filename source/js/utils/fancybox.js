@@ -1,11 +1,28 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // 初始化 Fancybox
+document.addEventListener('DOMContentLoaded', function () {
   Fancybox.bind('[data-fancybox="gallery"]', {
+    Carousel: {
+      Toolbar: {
+        display: {
+          left: ["counter"],
+          middle: [
+            "zoomIn",
+            "zoomOut",
+            "toggle1to1",
+            "rotateCCW",
+            "rotateCW",
+            "flipX",
+            "flipY",
+            "reset",
+          ],
+          right: ["autoplay", "fullscreen", "thumbs", "close"],
+        },
+      },
+    },
+    Hash: false,
     Thumbs: false,
-    Toolbar: true,
     dragToClose: true,
     Image: { zoom: true }
   });
 
-  console.log('Fancybox 已初始化');
+  console.log('Fancybox v6 已初始化');
 });
