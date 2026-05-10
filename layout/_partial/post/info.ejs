@@ -40,4 +40,18 @@
             </span>
         <% } %>
     <% } %>
+
+    <% if(theme.post.show_tags){ %>
+        <% if (post.tags && post.tags.length){ %>
+            <!-- 标签 -->
+            <span>
+                <i class="bi bi-tags me-2"></i><%- list_tags(post.tags, {
+                        show_count: false,
+                        style: 'none',
+                        separator: '、'
+                    })
+                %>
+            </span>
+        <% } %>
+    <% } %>
 </div>

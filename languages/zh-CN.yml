@@ -21,9 +21,11 @@ archives:
   total_count: "目前共计 %d 篇文章"
 
 categories:
+  selected: "分类: %s"
   total_count: "目前共计 %d 个分类"
 
 tags:
+  selected: "标签: %s"
   total_count: "目前共计 %d 个标签"
 
 friends:

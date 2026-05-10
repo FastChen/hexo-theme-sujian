@@ -4,10 +4,10 @@
 <div class="d-flex flex-wrap justify-content-center gap-2">
   <% site.tags.each(function(tag) { %>
   <a href="<%- url_for(tag.path) %>" class="text-decoration-none">
-    <div class="btn btn-secondary rounded-pill shadow-sm">
-      <%= tag.name %>
-      <span class="badge text-bg-light rounded-pill ms-1"><%= tag.length %></span>
-    </div>
+      <div class="btn btn-secondary rounded-pill shadow-sm">
+          <%= theme.tags.prefix %><%= tag.name %><%= theme.tags.suffix %>
+          <span class="badge text-bg-light rounded-pill ms-1"><%= tag.length %></span>
+      </div>
   </a>
   <% }) %>
 </div>

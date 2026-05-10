@@ -1,6 +1,5 @@
 @import '_common/highlight';
 @import '_common/category';
-@import '_common/back-to-top';
 @import 'fix-bootstrap';
 
 /* 修改字体默认以 NotoSansFont 开始 */
@@ -47,8 +46,8 @@ body {
   border-left: .25rem solid var(--bs-border-color, var(--bs-gray-300));
 }
 
-/* checkbox 列表对齐 */
-ul li:has(input[type="checkbox"]) {
+/* 修正列表对齐(含带有checkbox的列表) */
+ol, ul li:has(input[type="checkbox"]) {
   list-style: none;
   margin-left: -1em;
 }

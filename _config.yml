@@ -42,6 +42,8 @@ post:
   show_updated_date: true
   # 文章显示 "分类" 列表 默认值: true 可选值: true / false
   show_categories: true
+  # 文章显示 "标签" 列表 默认值: true 可选值: true / false
+  show_tags: true
 
 tags:
   # 标签前缀的符号
