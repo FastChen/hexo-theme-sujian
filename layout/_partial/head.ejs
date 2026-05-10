@@ -1,6 +1,3 @@
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%
     var title = page.title;
 
@@ -13,8 +10,21 @@
     else if (is_tag()){
       title = __('title.tags') + ': ' + page.tag;
     }
-  %>
+%>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title><% if (title){ %><%= title %> <%= theme.title.symbol %> <% } %><%= config.title %></title>
+  <meta name="description" content="<%= config.description%>">
+  <meta name="keywords" content="<%= config.keywords%>">
+
+<% if (theme.useNotoSansFont === true){ %>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+<% } %>
 
   <%- css('bootstrap/css/bootstrap.min') %>
   <%- css('bootstrap/css/bootstrap-icons.min') %>
@@ -25,25 +35,13 @@
   <% } %>
 
   <% if (theme.logo.favicon){ %>
-    <%- favicon_tag(theme.logo.favicon) %>
+  <%- favicon_tag(theme.logo.favicon) %>
   <% } %>
-
-  <meta name="description" content="<%= config.description%>">
-  <meta name="keywords" content="<%= config.keywords%>">
-
   <!-- Apple设备图标 -->
   <link rel="apple-touch-icon" sizes="180x180" href="<%= theme.logo.apple_touch_icon %>">
   <!-- Android设备图标 -->
   <link rel="icon" type="image/png" sizes="192x192" href="<%= theme.logo.x192 %>">
   <link rel="icon" type="image/png" sizes="512x512" href="<%= theme.logo.x512 %>">
-
-  <% if (theme.useNotoSansFont === true){ %>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
-  <% } %>
-
   <!-- Open Graph协议(社交媒体分享) -->
   <%- open_graph() %>
 </head>
