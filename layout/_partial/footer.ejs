@@ -29,6 +29,26 @@
 </footer>
 
 <% if (theme.fancybox.enable === true){ %>
+<script>
+  // 全局化，使用 Hexo 多语言功能实现自定义 Fancybox 文本
+  window.FANCYBOX_I18N = {
+    NEXT: '<%= _p("fancybox.next") %>',
+    PREV: '<%= _p("fancybox.prev") %>',
+    ZOOM_IN: '<%= _p("fancybox.zoom_in") %>',
+    ZOOM_OUT: '<%= _p("fancybox.zoom_out") %>',
+    TOGGLE_FULL: '<%= _p("fancybox.toggle_full") %>',
+    ROTATE_CCW: '<%= _p("fancybox.rotate_ccw") %>',
+    ROTATE_CW: '<%= _p("fancybox.rotate_cw") %>',
+    FLIP_X: '<%= _p("fancybox.flip_x") %>',
+    FLIP_Y: '<%= _p("fancybox.flip_y") %>',
+    RESET: '<%= _p("fancybox.reset") %>',
+    TOGGLE_AUTOPLAY: '<%= _p("fancybox.toggle_autoplay") %>',
+    TOGGLE_FULLSCREEN: '<%= _p("fancybox.toggle_fullscreen") %>',
+    TOGGLE_THUMBS: '<%= _p("fancybox.toggle_thumbs") %>',
+    CLOSE: '<%= _p("fancybox.close") %>',
+    IMAGE_ERROR: '<%= _p("fancybox.image_error") %>',
+  };
+</script>
   <!-- 引入并配置 Fancybox v6.1.14 -->
   <%- js('fancybox/fancybox.umd') %>
   <%- js('js/utils/fancybox') %>
